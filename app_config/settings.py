@@ -1,8 +1,9 @@
 from pathlib import Path
+from decouple import config
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = 'django-insecure-&@-b#9mz3iy3eo6&mqx-a@6fxv8=x!4cl7h)k7rn&w*tg5j^9*'
+SECRET_KEY = config('SECRET_KEY')
 DEBUG = True
 ALLOWED_HOSTS = []
 
@@ -86,8 +87,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'Asia/Tehran'
+LANGUAGE_CODE = config('LANGUAGE_CODE')
+TIME_ZONE = config('TIME_ZONE')
 USE_I18N = True
 USE_TZ = True
 
@@ -103,4 +104,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Doc: https://geo.ipify.org/settings & address: https://geo.ipify.org/api/v2/country?apiKey=<APIKEY>&ipAddress=<IP>
-APIKEY_IPIFY = 'at_QOiCn2YoFRM7bhyISSqhPTCrQ3ZAt'
+APIKEY_IPIFY = config('APIKEY_IPIFY')

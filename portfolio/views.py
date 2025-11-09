@@ -1,10 +1,35 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.conf import settings
+from .forms import ContactForm
+from .models import (
+    InfoModel,
+    SkillModel,
+    DegreeModel,
+    PortfolioModel,
+)
 
 
 # url: /
 def home_page(request):
-    return render(request, 'portfolio/home.html', {})
+    contact_form = ContactForm(request.POST or None)
+
+    if request.POST:
+        if contact_form.is_valid():
+            contact_form.save()
+            messages.success(request, 'Thank You for Submission!')
+            return redirect('/')
+
+
+    context = {
+        'info': InfoModel.objects.last(),
+        'skills1': SkillModel.objects.all()[0:SkillModel.objects.count()/2],
+        'skills2': SkillModel.objects.all()[SkillModel.objects.count()/2:],
+        'degrees': DegreeModel.objects.all(),
+        'ports': PortfolioModel.objects.all(),
+    }
+
+    return render(request, 'portfolio/home.html', context)
 
 
 def save_contact_form(request):
