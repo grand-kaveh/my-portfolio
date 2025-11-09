@@ -67,6 +67,7 @@ class PortfolioModel(models.Model):
 
 
 class ContactModel(models.Model):
+    ip = models.CharField(max_length=50, blank=True, verbose_name='user IP')
     name = models.CharField(max_length=255, verbose_name='Name')
     email_address = models.EmailField(max_length=255, verbose_name='E-mail')
     message = models.TextField(verbose_name='Message')

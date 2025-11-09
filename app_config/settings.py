@@ -100,3 +100,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = Path("static_cdn", "media_root")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Doc: https://geo.ipify.org/settings & address: https://geo.ipify.org/api/v2/country?apiKey=<APIKEY>&ipAddress=<IP>
+APIKEY_IPIFY = 'at_QOiCn2YoFRM7bhyISSqhPTCrQ3ZAt'
