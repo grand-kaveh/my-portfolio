@@ -36,3 +36,14 @@
     <a href="#top" id="gotoup_wrapper"><i class="fa fa-arrow-up"></i></a>
 </div>
 <!-- - go to up -->
+
+{% if messages %}
+<div style="position: fixed; left: 20px; top: 20px">
+    {% for msg in messages %}
+    <div class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ msg }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}

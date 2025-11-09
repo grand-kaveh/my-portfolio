@@ -2,10 +2,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('portfolio.urls')),
+    path('404', views.page_404),
+    path('403', views.page_403),
+    path('503', views.page_503),
 ]
 
 if settings.DEBUG:
