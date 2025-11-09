@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'extentions',
 
     # Packs
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

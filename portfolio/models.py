@@ -1,6 +1,7 @@
 from django.db import models
-from extentions.utils import user_image_path, portfolio_image_path, degree_image_path
-
+from extentions.utils import (
+    user_image_path, portfolio_image_path, degree_image_path, package_image_path
+)
 
 class InfoModel(models.Model):
     profile = models.ImageField(upload_to=user_image_path, verbose_name='Profile')
@@ -23,13 +24,13 @@ class InfoModel(models.Model):
 
 
 class SkillModel(models.Model):
-    TITLE_SKILL = (('beginner', 'BEGINNER'), ('expert', 'EXPERT'), ('master', 'MASTER'), ('advance', 'ADVANCE'))
-    skill = models.CharField(max_length=255, verbose_name='Skill')
+    LVL_SKILL = (('beginner', 'BEGINNER'), ('expert', 'EXPERT'), ('master', 'MASTER'), ('advance', 'ADVANCE'))
+    title = models.CharField(max_length=255, verbose_name='Skill')
     percent = models.PositiveIntegerField(verbose_name='Percent')
-    title = models.CharField(max_length=255, choices=TITLE_SKILL, verbose_name='Title')
+    level = models.CharField(max_length=255, choices=LVL_SKILL, verbose_name='Level')
 
     def __str__(self):
-        return self.skill
+        return self.title
 
     class Meta:
         verbose_name = 'Skill'
@@ -52,6 +53,7 @@ class DegreeModel(models.Model):
 
 class PortfolioModel(models.Model):
     image = models.ImageField(upload_to=portfolio_image_path, verbose_name='Image')
+    url = models.URLField(blank=True, verbose_name='URL')
     title = models.CharField(max_length=255, verbose_name='Title')
     techs = models.CharField(max_length=255, verbose_name='Technologies')
     description = models.TextField(verbose_name='Description')
@@ -81,3 +83,19 @@ class ContactModel(models.Model):
         ordering = ['-id']
         verbose_name = 'Contact'
         verbose_name_plural = 'Contacts'
+
+
+class PackageModel(models.Model):
+    title = models.CharField(max_length=255, verbose_name='Title')
+    github = models.CharField(max_length=255, verbose_name='GitHub')
+    version = models.CharField(max_length=255, verbose_name='Last Version')
+    image = models.ImageField(upload_to=package_image_path, verbose_name='Image')
+    desc = models.TextField(verbose_name='Description')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['-id']
+        verbose_name = 'Package'
+        verbose_name_plural = 'Packages'

@@ -38,3 +38,9 @@ def portfolio_image_path(instance, filename):
     ext, output = get_filename_ext_rand(filename)
     final_name = f"{output}{ext}"
     return f"portfolio/{final_name}"
+
+# ######### for packages imgs ######### #
+def package_image_path(instance, filename):
+    ext, output = get_filename_ext_rand(filename)
+    final_name = f"{output}{ext}"
+    return f"packages/{final_name}"

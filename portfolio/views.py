@@ -7,12 +7,14 @@ from .models import (
     SkillModel,
     DegreeModel,
     PortfolioModel,
+    PackageModel,
 )
+from extentions.utils import get_client_ip
 
 
 # url: /
 def home_page(request):
-    contact_form = ContactForm(request.POST or None)
+    contact_form = ContactForm(request.POST or None, initial={'ip': get_client_ip(request)})
 
     if request.POST:
         if contact_form.is_valid():
@@ -26,6 +28,9 @@ def home_page(request):
         'skills2': SkillModel.objects.all()[SkillModel.objects.count()/2:],
         'degrees': DegreeModel.objects.all(),
         'ports': PortfolioModel.objects.all(),
+        'info': InfoModel.objects.last(),
+        'apps': PackageModel.objects.all(),
+        'form': contact_form,
     }
 
     return render(request, 'portfolio/home.html', context)

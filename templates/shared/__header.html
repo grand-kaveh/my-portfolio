@@ -1,5 +1,9 @@
 {% load headerData static %}
 {% get_information as info %}
+{% nav_skill as ex_skill %}
+{% nav_degree as ex_degree %}
+{% nav_portfolio as ex_portfolio %}
+{% nav_package as ex_package %}
 
 <!-- header section start -->
 <div class="header_section" id="top">
@@ -20,18 +24,31 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#service">Service</a>
                 </li>
+
+                {% if ex_portfolio %}
                 <li class="nav-item">
                     <a class="nav-link" href="#portfolio">Portfolio</a>
                 </li>
+                {% endif %}
+
+                {% if ex_skill %}
                 <li class="nav-item">
                     <a class="nav-link" href="#skills">Skills</a>
                 </li>
+                {% endif %}
+
+                {% if ex_package %}
                 <li class="nav-item">
                     <a class="nav-link" href="#apps">Apps</a>
                 </li>
+                {% endif %}
+
+                {% if ex_degree %}
                 <li class="nav-item">
                     <a class="nav-link" href="#degrees">Degrees</a>
                 </li>
+                {% endif %}
+
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Contact Us</a>
                 </li>
