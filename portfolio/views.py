@@ -22,7 +22,6 @@ def home_page(request):
 
 
     context = {
-        'info': InfoModel.objects.last(),
         'skills1': SkillModel.objects.all()[0:SkillModel.objects.count()/2],
         'skills2': SkillModel.objects.all()[SkillModel.objects.count()/2:],
         'degrees': DegreeModel.objects.all(),

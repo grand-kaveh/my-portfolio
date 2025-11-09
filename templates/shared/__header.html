@@ -1,10 +1,11 @@
-{% load static %}
+{% load headerData static %}
+{% get_information as info %}
 
 <!-- header section start -->
 <div class="header_section" id="top">
 
     <div class="myimage_header">
-        <img src="{% static './images/banner-bg.png' %}" alt="">
+        <img src="{{ info.profile.url }}" alt="my image">
     </div>
 
     <div class="container">
@@ -21,6 +22,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#apps">Apps</a>
@@ -60,10 +64,10 @@
                             <div class="col-md-6">
                                 <div class="social_icon">
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="{{ info.telegram }}"><i class="fa fa-telegram" aria-hidden="true"></i></a></li>
+                                    <li><a href="{{ info.github }}"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                                    <li><a href="{{ info.ln }}"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="{{ info.insta }}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                                 </ul>
                                 </div>
                             </div>
@@ -82,10 +86,10 @@
                             <div class="col-md-6">
                                 <div class="social_icon">
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="{{ info.telegram }}"><i class="fa fa-telegram" aria-hidden="true"></i></a></li>
+                                    <li><a href="{{ info.github }}"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                                    <li><a href="{{ info.ln }}"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="{{ info.insta }}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                                 </ul>
                                 </div>
                             </div>
@@ -104,10 +108,10 @@
                             <div class="col-md-6">
                                 <div class="social_icon">
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="{{ info.telegram }}"><i class="fa fa-telegram" aria-hidden="true"></i></a></li>
+                                    <li><a href="{{ info.github }}"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                                    <li><a href="{{ info.ln }}"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a href="{{ info.insta }}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                                 </ul>
                                 </div>
                             </div>
