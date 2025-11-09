@@ -1,0 +1,29 @@
+{% load static %}
+
+<!-- Javascript files-->
+<script src="{% static '/js/jquery.min.js' %}"></script>
+<script src="{% static '/js/popper.min.js' %}"></script>
+<script src="{% static '/js/bootstrap.bundle.min.js' %}"></script>
+
+<script>
+    /* hide or show gotoup section */
+    $(window).scroll(function() {
+        if($(this).scrollTop() <= 300){
+        $('#gotoup_section').hide();
+        }else if($(this).scrollTop() > 300){
+        $('#gotoup_section').show();
+        }
+    });
+    /* get scroll percentage & gotoup section animation */
+    $(window).on('scroll', function(){
+        let s = $(window).scrollTop();
+        let d = $(document).height();
+        let c = $(window).height();
+
+        let scrollPercent = (s / (d - c)) * 100;
+        scrollPercent = Math.floor(scrollPercent);
+        
+        $('#bg_precentage').height(`${69 * (scrollPercent / 100)}px`);
+
+    });
+</script>

@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% include 'shared/__header_ref.html' %}
+
+    <title>{% block titlePage %}{% endblock %}</title>
+
+    {% block linkStatic %}{% endblock %}
+
+</head>
+<body>
+
+{% include 'shared/__header.html' %}
+{% block contentPage %}{% endblock %}
+{% include 'shared/__footer.html' %}
+
+{% include 'shared/__footer_ref.html' %}
+
+</body>
+</html>
