@@ -18,6 +18,7 @@ INSTALLED_APPS = [
 
     # Apps
     'portfolio.apps.PortfolioConfig',
+    'extentions',
 
     # Packs
 ]
