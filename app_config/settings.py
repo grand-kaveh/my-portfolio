@@ -93,13 +93,14 @@ TIME_ZONE = config('TIME_ZONE')
 USE_I18N = True
 USE_TZ = True
 
-STATIC_URL = '/site_static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = Path("static_cdn", "static_root")
-STATICFILES_DIRS = [
-	Path("assets")
-]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = Path("static_cdn", "media_root")
+# STATICFILES_DIRS = [
+# 	Path("assets")
+# ]
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
