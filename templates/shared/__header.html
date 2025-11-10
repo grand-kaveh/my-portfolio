@@ -8,9 +8,11 @@
 <!-- header section start -->
 <div class="header_section" id="top">
 
+    {% if info.profile %}
     <div class="myimage_header">
         <img src="{{ info.profile.url }}" alt="my image">
     </div>
+    {% endif %}
 
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
