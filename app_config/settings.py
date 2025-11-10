@@ -105,4 +105,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Doc: https://geo.ipify.org/settings & address: https://geo.ipify.org/api/v2/country?apiKey=<APIKEY>&ipAddress=<IP>
-APIKEY_IPIFY = config('APIKEY_IPIFY')

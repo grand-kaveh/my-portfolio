@@ -1,8 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.conf import settings
 from .forms import ContactForm
-from django.contrib.auth.decorators import login_required
 from .models import (
     InfoModel,
     SkillModel,
@@ -39,9 +37,3 @@ def home_page(request):
         'form': contact_form,
     }
     return render(request, 'portfolio/home.html', context)
-
-
-# url: /get-ip-data
-@login_required(login_url='/403')
-def get_ip_data(request):
-    print(settings.APIKEY_IPIFY)
